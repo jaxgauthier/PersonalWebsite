@@ -1,0 +1,13 @@
+.home-tab {
+  padding: 1rem;
+}
+
+.home-tab h1 {
+  color: #42b883; /* Green */
+  margin-bottom: 1rem;
+}
+
+.home-tab p {
+  color: #476582; /* Blue-grey */
+  line-height: 1.6;
+} 

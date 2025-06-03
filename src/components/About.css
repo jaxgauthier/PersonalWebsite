@@ -1,0 +1,13 @@
+.about-tab {
+  padding: 1rem;
+}
+
+.about-tab h1 {
+  color: #ea6f5a; /* Coral */
+  margin-bottom: 1rem;
+}
+
+.about-tab p {
+  color: #476582; /* Blue-grey */
+  line-height: 1.6;
+} 
