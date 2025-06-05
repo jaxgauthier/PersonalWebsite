@@ -22,9 +22,9 @@
 .logo-container {
   display: flex;
   align-items: center;
-  height: 200px;
+  height: 230px;
   padding: 0;
-  margin-left: -43px;
+  margin-left: -46px;
   overflow: hidden;
 }
 
@@ -72,6 +72,41 @@
 .tab:hover {
   background-color: #f0f0f0;
   color: #42b883;
+}
+
+.linkedin-icon {
+  width: 30px;
+  height: 30px;
+  object-fit: cover;
+  object-position: 45% 45%;
+  transform: scale(1.2);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.links-icon {
+  width: 25px;
+  height: 25px;
+  object-fit: cover;
+  transform: scale(1.2);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+a.tab {
+  display: flex;
+  align-items: center;
+  padding: 0.25rem;
+}
+
+a.tab:hover .linkedin-icon {
+  transform: scale(1.5);
+  transition: transform 0.3s ease;
+}
+
+a.tab:hover .links-icon {
+  transform: scale(1.4);
+  transition: transform 0.3s ease;
 }
 
 .tab-content {
