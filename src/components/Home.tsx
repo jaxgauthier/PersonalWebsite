@@ -1,17 +1,19 @@
 import TimelineItem from "./TimelineItem";
 import uiowa from '../assets/Iowa_Hawkeyes_logo.svg.png'
+import trickyleaf from '../assets/trickyleaf.png'
 
 const timelineData = [
   {
     date: "August, 2023",
     title: "Started at University of Iowa",
-    description: "Began my journey in Computer Science and Engineering at the University of Iowa with a focus and machine learnning and bio-imaging",
+    description: "Began my journey in Computer Science and Engineering at the University of Iowa with a focus and machine learnning and Bio-Imaging",
     image: uiowa
   },
   {
-    date: "2024",
-    title: "Web Development Journey",
-    description: "Built my first personal portfolio website using React, TypeScript, and modern web technologies.",
+    date: "May - July 2025",
+    title: "Internship with TrickyLeaf",
+    description: "Worked on front-end and back-end development for web and mobile applications for local businesses in the Milan, Lombardy region of Italy. Worked in italy for the internship",
+    image: trickyleaf
   },
   {
     date: "2024",
