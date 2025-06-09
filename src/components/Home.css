@@ -1,13 +1,13 @@
 .home-tab {
-  padding: 1rem;
+  background: linear-gradient(to bottom, #586b88 0%, #99b5d5 20%);
 }
 
 .home-tab h1 {
-  color: #42b883; /* Green */
+  color: #fcfcfc; /* Green */
   margin-bottom: 1rem;
 }
 
 .home-tab p {
-  color: #476582; /* Blue-grey */
+  color: #283435; /* Blue-grey */
   line-height: 1.6;
 } 

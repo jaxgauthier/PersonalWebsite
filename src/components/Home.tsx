@@ -1,8 +1,19 @@
 import TimelineItem from "./TimelineItem";
 import uiowa from '../assets/Iowa_Hawkeyes_logo.svg.png'
 import trickyleaf from '../assets/trickyleaf.png'
+import tcia from '../assets/tcia.jpg'
+import tech from '../assets/tac.png'
+import './Home.css'
 
 const timelineData = [
+  {
+    date: "August 2022 - May 2023",
+    title: "Technology Department Internship",
+    description: "Worked in the Technology Center at Lockport Township High School, providing IT support by troubleshooting and repairing Chromebooks, \
+    resolving technical issues, and assisting teachers with technology-related needs. Also gained experience in videography and business administration \
+    through support roles in school events and departmental tasks.",
+    image: tech
+  },
   {
     date: "August, 2023",
     title: "Started at University of Iowa",
@@ -10,9 +21,19 @@ const timelineData = [
     image: uiowa
   },
   {
+    date: "January 2024 - Present",
+    title: "Research at UIowa",
+    description: "Conducting research focused on the development and performance evaluation of algorithms for quantitative PET/CT image analysis. \
+    Leveraging data from The Cancer Imaging Archive (TCIA) and implementing custom neural network architectures to determine feature importance for \
+    predicting overall survival in patients with head and neck cancer. Utilizing 3D Slicer to visualize and interpret volumetric imaging data, including \
+    DICOM-RT structure sets, in relation to clinical segmentations and radiomic features.",
+    image: tcia
+  },
+  {
     date: "May - July 2025",
     title: "Internship with TrickyLeaf",
-    description: "Worked on front-end and back-end development for web and mobile applications for local businesses in the Milan, Lombardy region of Italy. Worked in italy for the internship",
+    description: "Worked on front-end and back-end development for web and mobile applications for local businesses in the Milan, Lombardy region of Italy. \
+    Contributed to IoT projects using mqqt.js and various brokers such as emqx. Worked in italy for the internship",
     image: trickyleaf
   },
   {
@@ -25,6 +46,7 @@ const timelineData = [
 
 const Home = () => {
   return (
+    <div className="home-tab">
     <section className="py-16 px-6">
       <div className="max-w-[90rem] mx-auto">
         <h1 className="text-4xl font-bold text-center text-gray-800 mb-4">
@@ -41,6 +63,7 @@ const Home = () => {
         </div>
       </div>
     </section>
+    </div>
   );
 };
 

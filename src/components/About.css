@@ -1,13 +1,15 @@
 .about-tab {
-  padding: 1rem;
+  min-height: calc(100vh - 300px);  /* Adjust based on your header height */
+  padding: 2rem;
+  background-color: #f0f7ff;  /* Light blue background */
 }
 
 .about-tab h1 {
-  color: #ea6f5a; /* Coral */
-  margin-bottom: 1rem;
+  color: #2c5282;  /* Darker blue for contrast */
+  margin-bottom: 1.5rem;
 }
 
 .about-tab p {
-  color: #476582; /* Blue-grey */
+  color: #2d3748;
   line-height: 1.6;
 } 
