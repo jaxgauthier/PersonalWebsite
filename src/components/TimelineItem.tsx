@@ -14,7 +14,7 @@ const TimelineItem = ({ date, title, description, image, index }: TimelineItemPr
   const controls = useAnimation();
   const imageControls = useAnimation();
   const [ref, inView] = useInView({
-    threshold: 0.5,
+    threshold: .1,
     triggerOnce: false,
   });
   const isEven = index % 2 === 0;
