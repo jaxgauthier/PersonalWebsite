@@ -1,13 +1,26 @@
 .home-tab {
-  background: linear-gradient(to bottom, #586b88 0%, #99b5d5 10%);
+  background: linear-gradient(to bottom, 
+    #132541 0%,
+    #1A3460 15%,
+    #2A4B85 30%,
+    #0066CC 45%,
+    #5098D6 60%,
+    #66B4EF 75%,
+    #99D2FF 90%
+  );
 }
 
 .home-tab h1 {
-  color: #fcfcfc; /* Green */
+  color: #e6e5e5; /* Green */
+  margin-bottom: 1rem;
+}
+
+.home-tab h2 {
+  color: #d37575; /* Green */
   margin-bottom: 1rem;
 }
 
 .home-tab p {
-  color: #283435; /* Blue-grey */
+  color: #b7c5c6; /* Blue-grey */
   line-height: 1.6;
 } 

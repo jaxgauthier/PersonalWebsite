@@ -68,8 +68,8 @@ const TimelineItem = ({ date, title, description, image, index }: TimelineItemPr
           <div className="flex items-center justify-between mb-4">
             <span className="text-sm font-semibold text-green-500 bg-green-50 px-3 py-1 rounded-full">{date}</span>
           </div>
-          <h3 className="text-2xl font-bold text-gray-800 mb-3 break-words">{title}</h3>
-          <p className="text-gray-600 text-lg leading-relaxed break-words">{description}</p>
+          <h3 className="text-2xl font-bold !text-black mb-3 break-words">{title}</h3>
+          <p className="!text-black text-lg leading-relaxed break-words">{description}</p>
         </div>
       </motion.div>
 
