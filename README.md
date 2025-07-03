@@ -1,21 +1,11 @@
-# React + TypeScript + Vite
+# Personal Website
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is my first personal project I have iterated over time with additions to keep adding onto and improving over time. It is used to show my journey over my years of experiencing while highlighting my favorite projects 
 
-While this project uses React, Vite supports many popular JS frameworks. [See all the supported frameworks](https://vitejs.dev/guide/#scaffolding-your-first-vite-project).
+## Contents
 
-## Deploy Your Own
+Page has two seperate routes, one for a general timeline that shows the key events over time leading me to where I am and the projects along the way. More indepth explanations on the projects are on the project page that show videos and skills covered by those projects. There is also a content page at the bottom with details on how to reach out 
 
-Deploy your own Vite project with Vercel.
+### Functioning Code
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/vercel/vercel/tree/main/examples/vite-react&template=vite-react)
-
-_Live Example: https://vite-react-example.vercel.app_
-
-### Deploying From Your Terminal
-
-You can deploy your new Vite project with a single command from your terminal using [Vercel CLI](https://vercel.com/download):
-
-```shell
-$ vercel
-```
+The code is seperated into assets, components, and the styling for the pages. Assets hold all of the images and videos on the site. framer-motion is used for the animations on the page. The components hold all of the pages that are not the main header at the top of the page. That is help in the main directory under App.tsx. Thetimeline item has its own .tsx file to control its over all setup for easily implementation into the Home.tsx. 
