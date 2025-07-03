@@ -253,4 +253,42 @@ a.tab:hover .links-icon {
   width: clamp(200px, 30vw, 400px);
   height: auto;
   object-fit: contain;
+}
+
+/* Sticky Navigation Styles */
+.sticky-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 50;
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(8px);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.sticky-nav .tabs {
+  margin: 0;
+  padding: 0.5rem 0;
+}
+
+.sticky-nav .tab {
+  font-size: 0.9rem;
+  padding: 0.4rem 0.8rem;
+}
+
+.sticky-nav .links-icon {
+  width: clamp(15px, 3vw, 20px);
+  height: clamp(15px, 3vw, 20px);
+}
+
+/* Ensure content doesn't jump when sticky nav appears */
+.sticky-nav-spacer {
+  height: 60px;
+  display: none;
+}
+
+.sticky-nav-spacer.visible {
+  display: block;
 } 

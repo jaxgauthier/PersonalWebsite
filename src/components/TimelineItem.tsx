@@ -1,6 +1,6 @@
 import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 
 interface TimelineItemProps {
   date: string;
@@ -13,6 +13,7 @@ interface TimelineItemProps {
 const TimelineItem = ({ date, title, description, image, index }: TimelineItemProps) => {
   const controls = useAnimation();
   const imageControls = useAnimation();
+  const videoRef = useRef<HTMLVideoElement>(null);
   const [ref, inView] = useInView({
     threshold: .1,
     triggerOnce: false,
@@ -31,6 +32,13 @@ const TimelineItem = ({ date, title, description, image, index }: TimelineItemPr
         x: 0,
         transition: { duration: 0.7, ease: "easeOut", delay: 0.2 }
       });
+      
+      // Play video when it comes into view
+      if (videoRef.current && image && (image.endsWith('.mov') || image.endsWith('.mp4'))) {
+        videoRef.current.play().catch(error => {
+          console.log('Video autoplay failed:', error);
+        });
+      }
     } else {
       controls.start({
         opacity: 0,
@@ -42,8 +50,13 @@ const TimelineItem = ({ date, title, description, image, index }: TimelineItemPr
         x: isEven ? 150 : -150,
         transition: { duration: 0.5, ease: "easeIn" }
       });
+      
+      // Pause video when it goes out of view
+      if (videoRef.current && image && (image.endsWith('.mov') || image.endsWith('.mp4'))) {
+        videoRef.current.pause();
+      }
     }
-  }, [inView, controls, imageControls, isEven]);
+  }, [inView, controls, imageControls, isEven, image]);
 
   return (
     <div ref={ref} className="relative pb-64 mb-24">
@@ -73,7 +86,7 @@ const TimelineItem = ({ date, title, description, image, index }: TimelineItemPr
         </div>
       </motion.div>
 
-      {/* Image - Always on the opposite side from description */}
+      {/* Media - Always on the opposite side from description */}
       {image && (
         <motion.div
           animate={imageControls}
@@ -85,11 +98,22 @@ const TimelineItem = ({ date, title, description, image, index }: TimelineItemPr
         >
           <div className={`bg-white rounded-lg shadow-md p-3 transition-shadow duration-300
                        ${inView ? 'shadow-xl' : 'shadow-md'} overflow-hidden`}>
-            <img 
-              src={image} 
-              alt={title} 
-              className="rounded-md w-full h-auto max-h-[400px] object-contain"
-            />
+            {image.endsWith('.mov') || image.endsWith('.mp4') ? (
+              <video 
+                ref={videoRef}
+                src={image} 
+                className="rounded-md w-full h-auto max-h-[400px] object-contain"
+                controls
+                muted
+                loop
+              />
+            ) : (
+              <img 
+                src={image} 
+                alt={title} 
+                className="rounded-md w-full h-auto max-h-[400px] object-contain"
+              />
+            )}
           </div>
         </motion.div>
       )}

@@ -1,6 +1,6 @@
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom'
 import { useState, useEffect } from 'react'
-import { motion } from 'framer-motion'
+import { motion, AnimatePresence } from 'framer-motion'
 import Home from './components/Home'
 import Projects from './components/Projects'
 import './App.css'
@@ -10,15 +10,22 @@ import github from './assets/GitHub.png'
 import moon from './assets/moon.png'
 import satellite from './assets/sattelite.png'
 
-
 function App() {
   const [imageError, setImageError] = useState(false);
   const [isRotating, setIsRotating] = useState(true);
   const [text] = useState("Hi, I'm Jaxson Gauthier");
   const [isComplete, setIsComplete] = useState(false);
+  const [showStickyNav, setShowStickyNav] = useState(false);
 
   useEffect(() => {
-    console.log('App component mounted');
+    const handleScroll = () => {
+      // Get the original tabs position (you might need to adjust this value)
+      const tabsPosition = window.innerHeight - 100; // Assuming tabs are near the bottom of the header
+      setShowStickyNav(window.scrollY > tabsPosition);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
   const sentence = {
@@ -40,9 +47,39 @@ function App() {
     }
   };
 
+  const NavTabs = () => (
+    <nav className="tabs">
+      <Link to="/" className="tab">Home</Link>
+      <Link to="/projects" className="tab">Projects</Link>
+      <a href="https://www.linkedin.com/in/jaxson-gauthier-61b555252/" className="tab">
+        <img src={linkedin} alt="LinkedIn" className="links-icon" />
+      </a>
+      <a href="https://github.com/jaxgauthier" className="tab">
+        <img src={github} alt="GitHub" className="links-icon" />
+      </a>
+    </nav>
+  );
+
   return (
     <Router>
       <div className="app-container">
+        {/* Sticky Navigation */}
+        <AnimatePresence>
+          {showStickyNav && (
+            <motion.div
+              initial={{ y: -100, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              exit={{ y: -100, opacity: 0 }}
+              className="fixed top-0 left-0 right-0 bg-white/80 backdrop-blur-sm shadow-md z-50 py-3 px-4"
+            >
+              <div className="max-w-7xl mx-auto flex items-center justify-between">
+                <span className="text-lg font-semibold text-gray-800">Jaxson Gauthier</span>
+                <NavTabs />
+              </div>
+            </motion.div>
+          )}
+        </AnimatePresence>
+
         <div className="header">
           <div className="stars">
             {[...Array(50)].map((_, i) => (
@@ -106,17 +143,7 @@ function App() {
               animate={{ opacity: 1 }}
               transition={{ duration: 2.5, delay: 0.5, ease: "easeInOut" }}
             >
-            <nav className="tabs">
-              <Link to="/" className="tab">Home</Link>
-              <Link to="/projects" className="tab">Projects/Research</Link>
-              <Link to="/resume" className="tab">Resume</Link>
-              <a href="https://www.linkedin.com/in/jaxson-gauthier-61b555252/" className="tab">
-                <img src={linkedin} alt="LinkedIn" className="links-icon" />
-              </a>
-              <a href="https://github.com/jaxgauthier" className="tab">
-                <img src={github} alt="GitHub" className="links-icon" />
-              </a>
-            </nav>
+              <NavTabs />
             </motion.div>
             <motion.div
               className="satellite-container"
@@ -146,7 +173,7 @@ function App() {
         </main>
       </div>
     </Router>
-  )
+  );
 }
 
-export default App
+export default App;

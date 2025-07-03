@@ -1,8 +1,33 @@
 .projects-tab {
-    padding: 1rem;
+  min-height: calc(100vh - 300px);
+  background: linear-gradient(135deg, #f0f7ff 0%, #e6f3ff 100%);
+  padding: 0;
 }
 
-.projects-tab h1{
-    color: #42b883;
-    margin-bottom: 1rem;
+.projects-tab h1 {
+  color: #2c5282;
+  margin-bottom: 1.5rem;
 }
+
+.projects-tab p {
+  color: #2d3748;
+  line-height: 1.6;
+}
+
+/* Custom scrollbar for better UX */
+.projects-tab::-webkit-scrollbar {
+  width: 8px;
+}
+
+.projects-tab::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+.projects-tab::-webkit-scrollbar-thumb {
+  background: #c1c1c1;
+  border-radius: 4px;
+}
+
+.projects-tab::-webkit-scrollbar-thumb:hover {
+  background: #a8a8a8;
+} 

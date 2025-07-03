@@ -6,6 +6,8 @@ import tech from '../assets/tac.png'
 import './Home.css'
 import si from '../assets/IMU.jpg'
 import ea from '../assets/Eningeering.png'
+import frequentListener from '../assets/adminSideFrequentListener.mov'
+import FooterBar from './FooterBar';
 
 const timelineData = [
   {
@@ -58,10 +60,10 @@ const timelineData = [
     image: trickyleaf
   },
   {
-    date: "2024",
-    title: "Looking Forward",
-    description: "Continuing to expand my skills in software development and seeking new opportunities to grow.",
-    image: "https://images.unsplash.com/photo-1571171637578-41bc2dd41cd2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
+    date: " July 2024",
+    title: "Frequent Listener",
+    description: "Developed a web application where users guess songs based on composite frequencies. The app starts with humming-like sounds and gradually reveals melodies, creating an engaging audio guessing experience.",
+    image: frequentListener
   },
 ];
 
@@ -75,6 +77,8 @@ const Home = () => {
         </h1>
         <p className="text-xl text-center text-gray-600 mb-16">
           Hi, I'm Jaxson Gauthier. Welcome to my personal website. Below is a timeline of the most important 
+          </p>
+          <p className="text-xl text-center text-gray-600 mb-16">
           events in my professional growth. You can click on each event to learn more!
         </p>
         
@@ -85,6 +89,7 @@ const Home = () => {
         </div>
       </div>
     </section>
+    <FooterBar />
     </div>
   );
 };
