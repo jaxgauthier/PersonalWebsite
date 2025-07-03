@@ -1,6 +1,6 @@
 import linkedin from '../assets/linkedInLogo_cropped.webp';
 import github from '../assets/GitHub.png';
-import resume from '../public/Resume7:3:25.pdf';
+import resume from '/public/Resume7:3:25.pdf';
 
 const FooterBar = () => {
   return (
