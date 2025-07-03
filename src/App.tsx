@@ -11,10 +11,9 @@ import moon from './assets/moon.png'
 import satellite from './assets/sattelite.png'
 
 function App() {
-  const [imageError, setImageError] = useState(false);
-  const [isRotating, setIsRotating] = useState(true);
+  const [, setImageError] = useState(false);
+  const [isRotating] = useState(true);
   const [text] = useState("Hi, I'm Jaxson Gauthier");
-  const [isComplete, setIsComplete] = useState(false);
   const [showStickyNav, setShowStickyNav] = useState(false);
 
   useEffect(() => {
@@ -125,7 +124,6 @@ function App() {
               variants={sentence}
               initial="hidden"
               animate="visible"
-              onAnimationComplete={() => setIsComplete(true)}
             >
               {text.split("").map((char, index) => (
                 <motion.span
