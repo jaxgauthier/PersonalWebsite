@@ -72,15 +72,14 @@ const Home = () => {
     <div className="home-tab">
     <section className="py-16 px-6">
       <div className="max-w-[90rem] mx-auto">
-        <h1 className="text-4xl font-bold text-center text-gray-800 mb-4">
-          Welcome!
-        </h1>
-        <p className="text-xl text-center text-gray-600 mb-16">
-          Hi, I'm Jaxson Gauthier. Welcome to my personal website. Below is a timeline of the most important 
+        <div className="flex flex-row items-start justify-center gap-8 mb-16">
+          <h1 className="text-4xl font-bold text-gray-800 text-left whitespace-nowrap">
+            Welcome!
+          </h1>
+          <p className="text-xl text-gray-600 max-w-2xl text-left">
+            Over the past few years, I have gained experience in software development, machine learning, image processing, and engineering. With hobbies in music, running, and playing games, I am always looking to explore projects in these topics. I love to learn new things and am always looking for new challenges.
           </p>
-          <p className="text-xl text-center text-gray-600 mb-16">
-          events in my professional growth. You can click on each event to learn more!
-        </p>
+        </div>
         
         <div className="relative max-w-[80rem] mx-auto">
           {timelineData.map((item, index) => (
