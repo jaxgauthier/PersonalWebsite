@@ -4,7 +4,7 @@ import { motion, AnimatePresence } from 'framer-motion'
 import Home from './components/Home'
 import Projects from './components/Projects'
 import './App.css'
-import logo from './assets/IMG_5957.jpg'
+import logo from './assets/IMG_5957 (1).jpg'
 import linkedin from './assets/linkedInLogo_cropped.webp'
 import github from './assets/GitHub.png'
 import moon from './assets/moon.png'
@@ -111,6 +111,7 @@ function App() {
               src={logo} 
               alt="Logo" 
               className={`logo ${isRotating ? 'logo-animate-fade-rotate' : ''}`}
+              loading="lazy"
               onError={(e: React.SyntheticEvent<HTMLImageElement, Event>) => {
                 console.error('Image failed to load');
                 setImageError(true);
