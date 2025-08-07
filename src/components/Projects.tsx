@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import { useRef, useEffect } from "react";
 import frequentListener from '../assets/userSideFrequent.mp4';
+import tcia from '../assets/tcia.jpg';
 import FooterBar from './FooterBar';
 import './Projects.css';
 
@@ -36,9 +37,9 @@ const ProjectCard = ({ project, index }: { project: any; index: number }) => {
       transition={{ duration: 0.6, delay: index * 0.2 }}
       className="bg-white rounded-xl shadow-lg overflow-hidden"
     >
-      <div className="grid lg:grid-cols-2 gap-6">
+      <div className="p-4">
         {/* Media Section */}
-        <div className="p-4">
+        <div className="mb-4">
           <div className="bg-gray-100 rounded-lg p-3">
             {project.media.endsWith('.mov') || project.media.endsWith('.mp4') ? (
               <video 
@@ -60,18 +61,18 @@ const ProjectCard = ({ project, index }: { project: any; index: number }) => {
         </div>
 
         {/* Content Section */}
-        <div className="p-4 flex flex-col justify-center">
-          <h2 className="text-2xl font-bold text-gray-800 mb-3">{project.title}</h2>
-          <p className="text-gray-600 text-base mb-4 leading-relaxed">{project.longDescription}</p>
+        <div>
+          <h2 className="text-xl font-bold text-gray-800 mb-2">{project.title}</h2>
+          <p className="text-gray-600 text-sm mb-3 leading-relaxed">{project.longDescription}</p>
           
           {/* Technologies */}
-          <div className="mb-4">
-            <h3 className="text-lg font-semibold text-gray-800 mb-3">Technologies Used</h3>
+          <div className="mb-3">
+            <h3 className="text-base font-semibold text-gray-800 mb-2">Technologies Used</h3>
             <div className="flex flex-wrap gap-2">
               {project.technologies.map((tech: string, techIndex: number) => (
                 <span 
                   key={techIndex}
-                  className="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-medium"
+                  className="bg-green-100 text-green-800 px-2 py-1 rounded-full text-xs font-medium"
                 >
                   {tech}
                 </span>
@@ -80,16 +81,18 @@ const ProjectCard = ({ project, index }: { project: any; index: number }) => {
           </div>
 
           {/* Links */}
-          <div className="mt-auto">
-            <a 
-              href={project.githubLink}
-              className="bg-gray-800 text-white px-6 py-2 rounded-lg hover:bg-gray-700 transition-colors duration-200 flex items-center inline-flex"
-            >
-              <svg className="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
-                <path fillRule="evenodd" d="M10 0C4.477 0 0 4.484 0 10.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0110 4.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.203 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.942.359.31.678.921.678 1.856 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0020 10.017C20 4.484 15.522 0 10 0z" clipRule="evenodd" />
-              </svg>
-              View on GitHub
-            </a>
+          <div>
+            {project.githubLink && (
+              <a 
+                href={project.githubLink}
+                className="bg-gray-800 text-white px-6 py-2 rounded-lg hover:bg-gray-700 transition-colors duration-200 flex items-center inline-flex"
+              >
+                <svg className="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                  <path fillRule="evenodd" d="M10 0C4.477 0 0 4.484 0 10.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0110 4.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.203 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.942.359.31.678.921.678 1.856 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0020 10.017C20 4.484 15.522 0 10 0z" clipRule="evenodd" />
+                </svg>
+                View on GitHub
+              </a>
+            )}
           </div>
         </div>
       </div>
@@ -107,6 +110,15 @@ function Projects_Research() {
       technologies: ["SQLlite", "API Integration", "React", "Audio Processing"],
       media: frequentListener,
       githubLink: "https://github.com/jaxgauthier/FrequentListener"
+    },
+    {
+      id: 2,
+      title: "PET/CT Image Analysis Research",
+      description: "Research focused on quantitative PET/CT image analysis for head and neck cancer survival prediction.",
+      longDescription: "Conducting research focused on the development and performance evaluation of algorithms for quantitative PET/CT image analysis. Leveraging data from The Cancer Imaging Archive (TCIA) and implementing custom neural network architectures to determine feature importance for predicting overall survival in patients with head and neck cancer. Utilizing 3D Slicer to visualize and interpret volumetric imaging data, including DICOM-RT structure sets, in relation to clinical segmentations and radiomic features.",
+      technologies: ["Python", "Machine Learning", "Neural Networks", "3D Slicer", "Medical Imaging"],
+      media: tcia,
+      githubLink: null
     }
   ];
 
@@ -125,7 +137,7 @@ function Projects_Research() {
           </p>
         </motion.div>
 
-        <div className="space-y-8">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
           {projects.map((project, index) => (
             <ProjectCard key={project.id} project={project} index={index} />
           ))}
