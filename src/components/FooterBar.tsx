@@ -51,7 +51,7 @@ const FooterBar = () => {
         <div className="md:w-1/4">
           <div className="mb-2 text-xs font-bold uppercase tracking-wider text-gray-400">Resume</div>
           <a 
-            href="/Resume8:6:25.pdf" 
+            href="/JaxsonGauthierResume.pdf" 
             target="_blank" 
             rel="noopener noreferrer"
             className="inline-flex items-center bg-green-600 hover:bg-green-700 px-6 py-3 rounded-lg transition-colors duration-200 font-medium"
