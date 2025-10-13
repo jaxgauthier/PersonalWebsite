@@ -25,7 +25,7 @@ const timelineData = [
     date: "August, 2023",
     title: "Started at University of Iowa",
     description: "Began my journey in Computer Science and Engineering at the University of Iowa with a focus and machine learnning and Bio-Imaging. \
-    Currently a junior working as a research assistant and an engineering ambassador with experience as a summplemental instructor",
+    Currently a junior working as a research assistant and an engineering ambassador with experience as a supplemental instructor",
     image: uiowa
   },
   {
@@ -40,7 +40,7 @@ const timelineData = [
   {
     date: "August - December 2024",
     title: "Supplemental Instructor",
-    description: "Led suplemental instruction sessions for an introduction to engineering problem solving course \
+    description: "Led supplemental instruction sessions for an introduction to engineering problem solving course \
     created and executed lesson plans for the course, and provided feedback to students on their work. Met with \
     professors to discuss course content and student progress.",
     image: si
