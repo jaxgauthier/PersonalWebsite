@@ -124,7 +124,7 @@ function Projects_Research() {
     {
       id: 3,
       title: "Custom Classification CNN Project",
-      description: "Custom CNN model used to classify whether treatment is needed or not on arterial phase contrast-enhanced preoperative CT scans of the kidneys. Implemented image processing techniques, custom cache dataset usage, implementation of custom CNN, and multiple evaluation techniques",
+      longDescription: "Custom CNN model used to classify whether treatment is needed or not on arterial phase contrast-enhanced preoperative CT scans of the kidneys. Implemented image processing techniques, custom cache dataset usage, implementation of custom CNN, and multiple evaluation techniques",
       technologies: ["Image Processing", "CNN Model"],
       media: classifcation
     }
