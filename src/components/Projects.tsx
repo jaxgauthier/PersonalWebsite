@@ -124,7 +124,7 @@ function Projects_Research() {
     {
       id: 3,
       title: "Custom Classification CNN Project",
-      longDescription: "Custom CNN model used to classify whether treatment is needed or not on arterial phase contrast-enhanced preoperative CT scans of the kidneys. Implemented image processing techniques, custom cache dataset usage, implementation of custom CNN, and multiple evaluation techniques",
+      longDescription: "A full end-to-end 3D medical imaging classification pipeline was developed using PyTorch, SimpleITK, and MONAI. The project includes standardized preprocessing of NIfTI volumes—orientation correction, resampling, z-score normalization, and uniform volume sizing—supported by a custom caching system for fast loading. A lightweight 3-layer 3D CNN (~135k parameters) was built and trained using class balancing, data augmentation, early stopping, and a weighted sampling strategy. Evaluation incorporated accuracy, precision, recall, F1-scores, confusion matrices, and ROC curves. Final test performance ranged between 62% and 75%, depending on image size and training configuration. The project demonstrates a complete workflow for medical image classification, from data preparation through model development and evaluation.",
       technologies: ["Image Processing", "CNN Model"],
       media: classifcation
     }
