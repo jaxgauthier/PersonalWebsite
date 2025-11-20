@@ -3,6 +3,7 @@ import { useInView } from "react-intersection-observer";
 import { useRef, useEffect } from "react";
 import frequentListener from '../assets/userSideFrequent.mp4';
 import tcia from '../assets/tcia.jpg';
+import classifcation from '../assets/DLMI_ProjectPDF-1.png'
 import FooterBar from './FooterBar';
 import './Projects.css';
 
@@ -119,6 +120,13 @@ function Projects_Research() {
       technologies: ["Python", "Machine Learning", "Neural Networks", "3D Slicer", "Medical Imaging"],
       media: tcia,
       githubLink: null
+    },
+    {
+      id: 3,
+      title: "Custom Classification CNN Project",
+      description: "Custom CNN model used to classify whether treatment is needed or not on arterial phase contrast-enhanced preoperative CT scans of the kidneys. Implemented image processing techniques, custom cache dataset usage, implementation of custom CNN, and multiple evaluation techniques",
+      technologies: ["Image Processing", "CNN Model"],
+      media: classifcation
     }
   ];
 
