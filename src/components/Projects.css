@@ -1,16 +1,16 @@
 .projects-tab {
   min-height: calc(100vh - 300px);
-  background: linear-gradient(135deg, #f0f7ff 0%, #e6f3ff 100%);
+  background: linear-gradient(to bottom, #132541 0%, #0a0e1a 100%);
   padding: 0;
 }
 
 .projects-tab h1 {
-  color: #2c5282;
+  color: #e6e5e5;
   margin-bottom: 1.5rem;
 }
 
 .projects-tab p {
-  color: #2d3748;
+  color: #b7c5c6;
   line-height: 1.6;
 }
 
@@ -20,14 +20,14 @@
 }
 
 .projects-tab::-webkit-scrollbar-track {
-  background: #f1f1f1;
+  background: #0a0e1a;
 }
 
 .projects-tab::-webkit-scrollbar-thumb {
-  background: #c1c1c1;
+  background: #132541;
   border-radius: 4px;
 }
 
 .projects-tab::-webkit-scrollbar-thumb:hover {
-  background: #a8a8a8;
+  background: #1a3460;
 } 

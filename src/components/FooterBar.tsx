@@ -3,7 +3,7 @@ import github from '../assets/GitHub.png';
 
 const FooterBar = () => {
   return (
-    <div className="w-full bg-gray-900 text-white py-12 px-4 mt-16">
+    <div className="w-full bg-slate-900 text-white py-12 px-4 mt-16 border-t border-slate-700/50">
       <div className="max-w-7xl mx-auto flex flex-col md:flex-row md:justify-between md:items-start gap-12">
         {/* Contact Me Title */}
         <div className="md:w-1/4 mb-8 md:mb-0 flex items-start">
@@ -18,7 +18,7 @@ const FooterBar = () => {
               href="https://github.com/jaxgauthier" 
               target="_blank" 
               rel="noopener noreferrer"
-              className="flex items-center bg-gray-800 hover:bg-gray-700 px-4 py-2 rounded-lg transition-colors duration-200 mb-2"
+              className="flex items-center bg-slate-700 hover:bg-slate-600 px-4 py-2 rounded-lg transition-colors duration-200 mb-2"
             >
               <img src={github} alt="GitHub" className="w-6 h-6 mr-2" />
               <span>GitHub</span>
@@ -27,7 +27,7 @@ const FooterBar = () => {
               href="https://www.linkedin.com/in/jaxson-gauthier-61b555252/" 
               target="_blank" 
               rel="noopener noreferrer"
-              className="flex items-center bg-blue-600 hover:bg-blue-700 px-4 py-2 rounded-lg transition-colors duration-200"
+              className="flex items-center bg-blue-700 hover:bg-blue-600 px-4 py-2 rounded-lg transition-colors duration-200"
             >
               <img src={linkedin} alt="LinkedIn" className="w-6 h-6 mr-2" />
               <span>LinkedIn</span>
@@ -38,7 +38,7 @@ const FooterBar = () => {
         {/* Email */}
         <div className="md:w-1/4 mb-8 md:mb-0">
           <div className="mb-2 text-xs font-bold uppercase tracking-wider text-gray-400">Email</div>
-          <div className="flex items-center bg-gray-800 px-4 py-2 rounded-lg">
+            <div className="flex items-center bg-slate-700 px-4 py-2 rounded-lg">
             <svg className="w-5 h-5 mr-2 text-green-400" fill="currentColor" viewBox="0 0 20 20">
               <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z" />
               <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z" />

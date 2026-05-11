@@ -59,12 +59,12 @@ const TimelineItem = ({ date, title, description, image, index }: TimelineItemPr
   }, [inView, controls, imageControls, isEven, image]);
 
   return (
-    <div ref={ref} className="relative pb-64 mb-24">
+    <div ref={ref} className="relative pb-32 mb-6">
       {/* Timeline line */}
-      <div className="absolute left-1/2 top-0 w-[2px] h-full bg-green-200 transform -translate-x-1/2 last:h-[50%]" />
+      <div className="absolute left-1/2 top-0 w-[2px] h-full bg-blue-600/50 transform -translate-x-1/2 last:h-[50%]" />
       
       {/* Timeline dot */}
-      <div className={`absolute left-1/2 top-0 w-3 h-3 rounded-full bg-green-500 shadow-md 
+      <div className={`absolute left-1/2 top-0 w-3 h-3 rounded-full bg-blue-400 shadow-md 
                     transform -translate-x-1/2 transition-transform duration-300
                     ${inView ? 'scale-150' : 'scale-100'}`} />
       
@@ -72,17 +72,17 @@ const TimelineItem = ({ date, title, description, image, index }: TimelineItemPr
       <motion.div 
         animate={controls}
         initial={{ opacity: 0, x: isEven ? -150 : 150 }}
-        className={`${isEven ? 'mr-[calc(50%+2rem)]' : 'ml-[calc(50%+2rem)]'} 
-                   ${isEven ? 'ml-8' : 'mr-8'}
+        className={`${isEven ? 'mr-[calc(50%+1.5rem)]' : 'ml-[calc(50%+1.5rem)]'} 
+                   ${isEven ? 'ml-6' : 'mr-6'}
                    max-w-[calc(42%)] w-full`}
       >
-        <div className={`bg-white rounded-lg shadow-md p-8 transition-shadow duration-300
+        <div className={`bg-slate-800/90 rounded-lg shadow-md p-5 transition-shadow duration-300 border border-slate-700/50
                       ${inView ? 'shadow-xl' : 'shadow-md'}`}>
-          <div className="flex items-center justify-between mb-4">
-            <span className="text-sm font-semibold text-green-500 bg-green-50 px-3 py-1 rounded-full">{date}</span>
+          <div className="flex items-center justify-between mb-2">
+            <span className="text-xs font-semibold text-blue-300 bg-blue-900/40 px-2 py-0.5 rounded-full border border-blue-700/30">{date}</span>
           </div>
-          <h3 className="text-2xl font-bold !text-black mb-3 break-words">{title}</h3>
-          <p className="!text-black text-lg leading-relaxed break-words">{description}</p>
+          <h3 className="text-lg font-bold !text-gray-200 mb-1.5 break-words">{title}</h3>
+          <p className="!text-gray-300 text-sm leading-snug break-words">{description}</p>
         </div>
       </motion.div>
 
@@ -91,18 +91,18 @@ const TimelineItem = ({ date, title, description, image, index }: TimelineItemPr
         <motion.div
           animate={imageControls}
           initial={{ opacity: 0, x: isEven ? 150 : -150 }}
-          className={`absolute ${isEven ? 'top-24' : 'top-12'} 
-                     ${isEven ? 'left-[calc(50%+2rem)]' : 'right-[calc(50%+2rem)]'}
-                     ${isEven ? 'right-8' : 'left-8'}
+          className={`absolute ${isEven ? 'top-12' : 'top-6'} 
+                     ${isEven ? 'left-[calc(50%+1.5rem)]' : 'right-[calc(50%+1.5rem)]'}
+                     ${isEven ? 'right-6' : 'left-6'}
                      max-w-[calc(42%)] w-full`}
         >
-          <div className={`bg-white rounded-lg shadow-md p-3 transition-shadow duration-300
+          <div className={`bg-slate-800/90 rounded-lg shadow-md p-2 transition-shadow duration-300 border border-slate-700/50
                        ${inView ? 'shadow-xl' : 'shadow-md'} overflow-hidden`}>
             {image.endsWith('.mov') || image.endsWith('.mp4') ? (
               <video 
                 ref={videoRef}
                 src={image} 
-                className="rounded-md w-full h-auto max-h-[400px] object-contain"
+                className="rounded-md w-full h-auto max-h-[240px] object-contain"
                 controls
                 muted
                 loop
@@ -111,7 +111,7 @@ const TimelineItem = ({ date, title, description, image, index }: TimelineItemPr
               <img 
                 src={image} 
                 alt={title} 
-                className="rounded-md w-full h-auto max-h-[400px] object-contain"
+                className="rounded-md w-full h-auto max-h-[240px] object-contain"
               />
             )}
           </div>

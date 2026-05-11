@@ -73,10 +73,10 @@ const Home = () => {
     <section className="py-16 px-6">
       <div className="max-w-[90rem] mx-auto">
         <div className="flex flex-row items-start justify-center gap-8 mb-16">
-          <h1 className="text-4xl font-bold text-gray-800 text-left whitespace-nowrap">
+          <h1 className="text-4xl font-bold text-gray-200 text-left whitespace-nowrap">
             Welcome!
           </h1>
-          <p className="text-xl text-gray-600 max-w-2xl text-left">
+          <p className="text-xl text-gray-300 max-w-2xl text-left">
             Over the past few years, I have gained experience in software development, machine learning, image processing, and engineering. With hobbies in music, running, and playing games, I am always looking to explore projects in these topics. I love to learn new things and am always looking for new challenges.
           </p>
         </div>

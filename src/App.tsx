@@ -69,10 +69,10 @@ function App() {
               initial={{ y: -100, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               exit={{ y: -100, opacity: 0 }}
-              className="fixed top-0 left-0 right-0 bg-white/80 backdrop-blur-sm shadow-md z-50 py-3 px-4"
+              className="fixed top-0 left-0 right-0 bg-slate-900/90 backdrop-blur-sm shadow-md z-50 py-3 px-4 border-b border-slate-700/50"
             >
               <div className="max-w-7xl mx-auto flex items-center justify-between">
-                <span className="text-lg font-semibold text-gray-800">Jaxson Gauthier</span>
+                <span className="text-lg font-semibold text-gray-200">Jaxson Gauthier</span>
                 <NavTabs />
               </div>
             </motion.div>
