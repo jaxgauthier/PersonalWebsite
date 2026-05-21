@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import { useRef, useEffect } from "react";
-import frequentListener from '../assets/userSideFrequent.mp4';
+import fouriele from '../assets/userSideFrequent.mp4';
 import tcia from '../assets/tcia.jpg';
 import classifcation from '../assets/DLMI_ProjectPDF-1.png'
 import FooterBar from './FooterBar';
@@ -82,11 +82,26 @@ const ProjectCard = ({ project, index }: { project: any; index: number }) => {
           </div>
 
           {/* Links */}
-          <div>
+          <div className="flex flex-wrap gap-3">
+            {project.websiteLink && (
+              <a
+                href={project.websiteLink}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="bg-blue-700 text-white px-6 py-2 rounded-lg hover:bg-blue-600 transition-colors duration-200 inline-flex items-center"
+              >
+                <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                </svg>
+                Visit Fouriele
+              </a>
+            )}
             {project.githubLink && (
               <a 
                 href={project.githubLink}
-                className="bg-slate-700 text-white px-6 py-2 rounded-lg hover:bg-slate-600 transition-colors duration-200 flex items-center inline-flex"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="bg-slate-700 text-white px-6 py-2 rounded-lg hover:bg-slate-600 transition-colors duration-200 inline-flex items-center"
               >
                 <svg className="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
                   <path fillRule="evenodd" d="M10 0C4.477 0 0 4.484 0 10.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0110 4.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.203 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.942.359.31.678.921.678 1.856 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0020 10.017C20 4.484 15.522 0 10 0z" clipRule="evenodd" />
@@ -105,11 +120,12 @@ function Projects_Research() {
   const projects = [
     {
       id: 1,
-      title: "Frequent Listener",
+      title: "Fouriele",
       description: "A web application that challenges users to guess songs based on composite frequencies. The app starts with humming-like sounds and gradually reveals melodies, creating an engaging audio guessing experience.",
       longDescription: "Using the Fast Fourier Transform, songs get created into increasingly sized composite frequencies as the user tries to guess the song. Stores user stats including average score, accuracy, and times played in a SQLite database. Also stores song information such as every song used as well as average score per song. Has an admin side that controls the current song as well as the next songs in a weekly queue. Uses apis from both Youtube and Spotify to get song information and audio.",
       technologies: ["SQLlite", "API Integration", "React", "Audio Processing"],
-      media: frequentListener,
+      media: fouriele,
+      websiteLink: "https://fouriele.com",
       githubLink: "https://github.com/jaxgauthier/FrequentListener"
     },
     {

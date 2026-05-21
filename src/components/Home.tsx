@@ -6,7 +6,7 @@ import tech from '../assets/tac.png'
 import './Home.css'
 import si from '../assets/IMU.jpg'
 import ea from '../assets/Eningeering.png'
-import frequentListener from '../assets/adminSideFrequentListener.mov'
+import fouriele from '../assets/adminSideFrequentListener.mov'
 import FooterBar from './FooterBar';
 
 const timelineData = [
@@ -61,9 +61,10 @@ const timelineData = [
   },
   {
     date: " July 2024",
-    title: "Frequent Listener",
+    title: "Fouriele",
     description: "Developed a web application where users guess songs based on composite frequencies. The app starts with humming-like sounds and gradually reveals melodies, creating an engaging audio guessing experience.",
-    image: frequentListener
+    image: fouriele,
+    link: "https://fouriele.com"
   },
 ];
 
