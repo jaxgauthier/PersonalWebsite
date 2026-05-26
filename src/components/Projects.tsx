@@ -5,6 +5,8 @@ import fouriele from '../assets/userSideFrequent.mp4';
 import tcia from '../assets/tcia.jpg';
 import classifcation from '../assets/DLMI_ProjectPDF-1.png'
 import FooterBar from './FooterBar';
+import tetris from '../assets/Tetris.mov';
+import smartpong from '../assets/SmartPong.jpg';
 import './Projects.css';
 
 const ProjectCard = ({ project, index }: { project: any; index: number }) => {
@@ -130,6 +132,24 @@ function Projects_Research() {
     },
     {
       id: 2,
+      title: "Two Player Tetris",
+      description: "A fully functional two player Tetris using two Atmega328p microcontrollers that are communucating via UART​",
+      longDescription: "The project successfully implemented a distributed, hardware-based Tetris environment. The AVR receiver accurately interpreted serial UART payloads to queue pieces and rendered a fully playable game on our16x2 HD44780 LCD. Real time inputs control piece movement with zero noticeable latency, and the custom CGRAM character generation successfully displays a 4x16 grid.​",
+      technologies: ["AVR", "UART", "LCD", "Tetris", "Embedded Systems", "C"],
+      media: tetris,
+      githubLink: null
+    },
+    {
+      id: 3,
+      title: "SmartPong",
+      description: "An Automated Stat Tracking System for Pong Games using a Raspberry Pi and a camera​",
+      longDescription: "This project uses a Raspberry Pi to track the stats of a pong game using a camera. It uses the OpenCV library to track the ball and the paddles. It then uses the stats to track the score of the game.​",
+      technologies: ["Raspberry Pi", "Camera", "Pong", "Embedded Systems", "Python"],
+      media: smartpong,
+      githubLink: null
+    },
+    {
+      id: 4,
       title: "PET/CT Image Analysis Research",
       description: "Research focused on quantitative PET/CT image analysis for head and neck cancer survival prediction.",
       longDescription: "Conducting research focused on the development and performance evaluation of algorithms for quantitative PET/CT image analysis. Leveraging data from The Cancer Imaging Archive (TCIA) and implementing custom neural network architectures to determine feature importance for predicting overall survival in patients with head and neck cancer. Utilizing 3D Slicer to visualize and interpret volumetric imaging data, including DICOM-RT structure sets, in relation to clinical segmentations and radiomic features.",
@@ -138,7 +158,7 @@ function Projects_Research() {
       githubLink: null
     },
     {
-      id: 3,
+      id: 5,
       title: "Custom Classification CNN Project",
       longDescription: "A full end-to-end 3D medical imaging classification pipeline was developed using PyTorch, SimpleITK, and MONAI. The project includes standardized preprocessing of NIfTI volumes—orientation correction, resampling, z-score normalization, and uniform volume sizing—supported by a custom caching system for fast loading. A lightweight 3-layer 3D CNN (~135k parameters) was built and trained using class balancing, data augmentation, early stopping, and a weighted sampling strategy. Evaluation incorporated accuracy, precision, recall, F1-scores, confusion matrices, and ROC curves. Final test performance ranged between 62% and 75%, depending on image size and training configuration. The project demonstrates a complete workflow for medical image classification, from data preparation through model development and evaluation.",
       technologies: ["Image Processing", "CNN Model"],
