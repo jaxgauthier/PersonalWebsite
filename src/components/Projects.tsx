@@ -6,7 +6,7 @@ import tcia from '../assets/tcia.jpg';
 import classifcation from '../assets/DLMI_ProjectPDF-1.png'
 import FooterBar from './FooterBar';
 import tetris from '../assets/Tetris.mov';
-import smartpong from '../assets/SmartPong.jpg';
+import smartpong from '../assets/SmartPong3.png';
 import './Projects.css';
 
 const ProjectCard = ({ project, index }: { project: any; index: number }) => {
@@ -17,20 +17,16 @@ const ProjectCard = ({ project, index }: { project: any; index: number }) => {
   });
 
   useEffect(() => {
+    if (project.mediaType !== 'video') return;
+
     if (inView) {
-      // Play video when it comes into view
-      if (videoRef.current && project.media && (project.media.endsWith('.mov') || project.media.endsWith('.mp4'))) {
-        videoRef.current.play().catch(error => {
-          console.log('Video autoplay failed:', error);
-        });
-      }
+      videoRef.current?.play().catch(error => {
+        console.log('Video autoplay failed:', error);
+      });
     } else {
-      // Pause video when it goes out of view
-      if (videoRef.current && project.media && (project.media.endsWith('.mov') || project.media.endsWith('.mp4'))) {
-        videoRef.current.pause();
-      }
+      videoRef.current?.pause();
     }
-  }, [inView, project.media]);
+  }, [inView, project.mediaType]);
 
   return (
     <motion.div
@@ -44,7 +40,7 @@ const ProjectCard = ({ project, index }: { project: any; index: number }) => {
         {/* Media Section */}
         <div className="mb-4">
           <div className="bg-slate-900/50 rounded-lg p-3 border border-slate-700/30">
-            {project.media.endsWith('.mov') || project.media.endsWith('.mp4') ? (
+            {project.mediaType === 'video' ? (
               <video 
                 ref={videoRef}
                 src={project.media} 
@@ -127,6 +123,7 @@ function Projects_Research() {
       longDescription: "Using the Fast Fourier Transform, songs get created into increasingly sized composite frequencies as the user tries to guess the song. Stores user stats including average score, accuracy, and times played in a SQLite database. Also stores song information such as every song used as well as average score per song. Has an admin side that controls the current song as well as the next songs in a weekly queue. Uses apis from both Youtube and Spotify to get song information and audio.",
       technologies: ["SQLlite", "API Integration", "React", "Audio Processing"],
       media: fouriele,
+      mediaType: 'video',
       websiteLink: "https://fouriele.com",
       githubLink: "https://github.com/jaxgauthier/FrequentListener"
     },
@@ -137,6 +134,7 @@ function Projects_Research() {
       longDescription: "The project successfully implemented a distributed, hardware-based Tetris environment. The AVR receiver accurately interpreted serial UART payloads to queue pieces and rendered a fully playable game on our16x2 HD44780 LCD. Real time inputs control piece movement with zero noticeable latency, and the custom CGRAM character generation successfully displays a 4x16 grid.​",
       technologies: ["AVR", "UART", "LCD", "Tetris", "Embedded Systems", "C"],
       media: tetris,
+      mediaType: 'video',
       githubLink: null
     },
     {
@@ -146,6 +144,7 @@ function Projects_Research() {
       longDescription: "This project uses a Raspberry Pi to track the stats of a pong game using a camera. It uses the OpenCV library to track the ball and the paddles. It then uses the stats to track the score of the game.​",
       technologies: ["Raspberry Pi", "Camera", "Pong", "Embedded Systems", "Python"],
       media: smartpong,
+      mediaType: 'image',
       githubLink: null
     },
     {
@@ -155,6 +154,7 @@ function Projects_Research() {
       longDescription: "Conducting research focused on the development and performance evaluation of algorithms for quantitative PET/CT image analysis. Leveraging data from The Cancer Imaging Archive (TCIA) and implementing custom neural network architectures to determine feature importance for predicting overall survival in patients with head and neck cancer. Utilizing 3D Slicer to visualize and interpret volumetric imaging data, including DICOM-RT structure sets, in relation to clinical segmentations and radiomic features.",
       technologies: ["Python", "Machine Learning", "Neural Networks", "3D Slicer", "Medical Imaging"],
       media: tcia,
+      mediaType: 'image',
       githubLink: null
     },
     {
@@ -162,7 +162,8 @@ function Projects_Research() {
       title: "Custom Classification CNN Project",
       longDescription: "A full end-to-end 3D medical imaging classification pipeline was developed using PyTorch, SimpleITK, and MONAI. The project includes standardized preprocessing of NIfTI volumes—orientation correction, resampling, z-score normalization, and uniform volume sizing—supported by a custom caching system for fast loading. A lightweight 3-layer 3D CNN (~135k parameters) was built and trained using class balancing, data augmentation, early stopping, and a weighted sampling strategy. Evaluation incorporated accuracy, precision, recall, F1-scores, confusion matrices, and ROC curves. Final test performance ranged between 62% and 75%, depending on image size and training configuration. The project demonstrates a complete workflow for medical image classification, from data preparation through model development and evaluation.",
       technologies: ["Image Processing", "CNN Model"],
-      media: classifcation
+      media: classifcation,
+      mediaType: 'image',
     }
   ];
 
