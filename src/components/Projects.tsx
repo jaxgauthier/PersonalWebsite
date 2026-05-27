@@ -141,11 +141,11 @@ function Projects_Research() {
       id: 3,
       title: "SmartPong",
       description: "An Automated Stat Tracking System for Pong Games using a Raspberry Pi and a camera​",
-      longDescription: "This project uses a Raspberry Pi to track the stats of a pong game using a camera. It uses the OpenCV library to track the ball and the paddles. It then uses the stats to track the score of the game.​",
+      longDescription: "This Internet of Things project uses a Raspberry Pi with a camera to create an automated stat tracking system for cup pong. It is then relayed to a web app that allows users to sign in, play the game, receive live feedback detailing which cup to aim for, and odds for the team to win. I was tasked with creating the automated tracking system. This occurs using ArUco markers and OpenCV to detect which cups where still in play.​",
       technologies: ["Raspberry Pi", "Camera", "Pong", "Embedded Systems", "Python"],
       media: smartpong,
       mediaType: 'image',
-      githubLink: null
+      githubLink: "https://github.com/jaxgauthier/SmartPong"
     },
     {
       id: 4,
